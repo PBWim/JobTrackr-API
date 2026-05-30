@@ -1,3 +1,4 @@
+using BCrypt.Net;
 using JobTrackr.Application.DTOs;
 using JobTrackr.Application.Interfaces;
 using JobTrackr.Domain.Entities;

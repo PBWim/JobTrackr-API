@@ -99,4 +99,7 @@ using (var scope = app.Services.CreateScope())
     db.Database.Migrate();
 }
 
+// Redirect root to Swagger
+app.MapGet("/", () => Results.Redirect("/swagger"));
+
 app.Run();
