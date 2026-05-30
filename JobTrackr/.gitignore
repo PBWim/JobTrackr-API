@@ -1,0 +1,56 @@
+# ── Build output ──────────────────────────────────────────────────────────────
+bin/
+obj/
+out/
+
+# ── Visual Studio ─────────────────────────────────────────────────────────────
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# ── Rider ────────────────────────────────────────────────────────────────────
+.idea/
+*.sln.iml
+
+# ── VS Code ───────────────────────────────────────────────────────────────────
+.vscode/
+
+# ── .NET ──────────────────────────────────────────────────────────────────────
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# ── Secrets / Config ──────────────────────────────────────────────────────────
+appsettings.Development.json
+appsettings.Production.json
+**/secrets.json
+*.pfx
+*.p12
+
+# ── EF Core Migrations (optional — remove if you want to commit migrations) ───
+# **/Migrations/
+
+# ── Test results ──────────────────────────────────────────────────────────────
+TestResults/
+coverage/
+*.trx
+*.coverage
+*.coveragexml
+
+# ── Docker ────────────────────────────────────────────────────────────────────
+.dockerignore
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini

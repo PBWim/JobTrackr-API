@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: src/JobTrackr.API/Dockerfile
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=sqlserver;Database=JobTrackrDb;User Id=sa;Password=YourStrong!Passw0rd;TrustServerCertificate=True;
+      - Jwt__Key=YourSuperSecretKeyHere_ChangeThis_AtLeast32Chars!
+      - Jwt__Issuer=JobTrackr
+      - Jwt__Audience=JobTrackrUsers
+    depends_on:
+      - sqlserver
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourStrong!Passw0rd
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqldata:/var/opt/mssql
+
+volumes:
+  sqldata:
